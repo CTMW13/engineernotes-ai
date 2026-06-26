@@ -19,10 +19,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 
 # --------------------------------------------------
-# App contact details
+# App links
 # --------------------------------------------------
 
-CONTACT_EMAIL = "your-email@example.com"
+FEEDBACK_FORM_URL = "https://tally.so/r/pbMDpP"
 GITHUB_REPO_URL = "https://github.com/CTMW13/engineernotes-ai"
 
 
@@ -81,8 +81,8 @@ st.markdown(
     """
     <style>
     :root {
-        --baby-blue: #DFF3FF;
-        --sky-blue: #B9E6FF;
+        --baby-blue: #CBEFFF;
+        --sky-blue: #A9DCF7;
         --deep-blue: #1E3A5F;
         --mid-blue: #274B72;
         --smoky-orange: #D9825B;
@@ -91,15 +91,22 @@ st.markdown(
         --soft-white: #FFFFFF;
         --slate: #334155;
         --muted-slate: #64748B;
+
+        --lilac: #F3E8FF;
+        --lilac-strong: #E9D5FF;
+        --purple-border: #C084FC;
+        --purple-text: #4C1D95;
+
         --border-blue: rgba(30, 58, 95, 0.14);
         --border-orange: rgba(217, 130, 91, 0.22);
     }
 
     .stApp {
         background:
-            radial-gradient(circle at top left, rgba(185, 230, 255, 0.85), transparent 34%),
-            radial-gradient(circle at top right, rgba(217, 130, 91, 0.22), transparent 32%),
-            linear-gradient(135deg, #DFF3FF 0%, #EEF8FF 42%, #FFF8F1 100%);
+            radial-gradient(circle at top left, rgba(169, 220, 247, 0.95), transparent 35%),
+            radial-gradient(circle at top right, rgba(217, 130, 91, 0.26), transparent 34%),
+            radial-gradient(circle at bottom right, rgba(233, 213, 255, 0.55), transparent 30%),
+            linear-gradient(135deg, #CBEFFF 0%, #E7F6FF 42%, #FFF8F1 100%);
         color: var(--deep-blue);
     }
 
@@ -135,10 +142,10 @@ st.markdown(
         padding: 2.4rem;
         border-radius: 28px;
         background:
-            linear-gradient(135deg, rgba(185, 230, 255, 0.98) 0%, rgba(223, 243, 255, 0.96) 45%, rgba(217, 130, 91, 0.72) 100%);
+            linear-gradient(135deg, rgba(169, 220, 247, 0.98) 0%, rgba(203, 239, 255, 0.96) 42%, rgba(217, 130, 91, 0.78) 100%);
         color: var(--deep-blue);
-        box-shadow: 0 18px 45px rgba(30, 58, 95, 0.18);
-        border: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0 18px 45px rgba(30, 58, 95, 0.20);
+        border: 1px solid rgba(255, 255, 255, 0.72);
         margin-bottom: 1.5rem;
     }
 
@@ -165,8 +172,8 @@ st.markdown(
         display: inline-block;
         padding: 0.48rem 0.78rem;
         border-radius: 999px;
-        background: rgba(255, 248, 241, 0.78);
-        border: 1px solid rgba(201, 106, 67, 0.25);
+        background: rgba(255, 248, 241, 0.82);
+        border: 1px solid rgba(201, 106, 67, 0.28);
         color: var(--deep-blue) !important;
         margin-right: 0.45rem;
         margin-bottom: 0.45rem;
@@ -181,7 +188,7 @@ st.markdown(
         border-radius: 22px;
         padding: 1.25rem 1.35rem;
         margin-bottom: 1.4rem;
-        box-shadow: 0 12px 30px rgba(30, 58, 95, 0.08);
+        box-shadow: 0 12px 30px rgba(30, 58, 95, 0.10);
     }
 
     .spark-label {
@@ -219,11 +226,11 @@ st.markdown(
     }
 
     .info-card {
-        background: rgba(255, 248, 241, 0.94);
+        background: rgba(255, 248, 241, 0.95);
         padding: 1.2rem;
         border-radius: 20px;
         border: 1px solid var(--border-orange);
-        box-shadow: 0 10px 28px rgba(30, 58, 95, 0.08);
+        box-shadow: 0 10px 28px rgba(30, 58, 95, 0.09);
         min-height: 150px;
     }
 
@@ -241,12 +248,12 @@ st.markdown(
     }
 
     .metric-card {
-        background: rgba(255, 255, 255, 0.86);
+        background: rgba(255, 255, 255, 0.90);
         padding: 0.85rem 1rem;
         border-radius: 16px;
-        border: 1px solid rgba(185, 230, 255, 0.9);
+        border: 1px solid rgba(169, 220, 247, 0.95);
         color: var(--deep-blue) !important;
-        box-shadow: 0 8px 22px rgba(30, 58, 95, 0.05);
+        box-shadow: 0 8px 22px rgba(30, 58, 95, 0.06);
     }
 
     .metric-card strong {
@@ -254,31 +261,32 @@ st.markdown(
     }
 
     .premium-card {
-        background: rgba(255, 248, 241, 0.9);
-        padding: 0.85rem 0.9rem;
+        background: linear-gradient(135deg, rgba(243, 232, 255, 0.96) 0%, rgba(233, 213, 255, 0.94) 100%);
+        padding: 0.9rem 0.95rem;
         border-radius: 16px;
-        border: 1px solid rgba(217, 130, 91, 0.18);
-        margin-bottom: 0.7rem;
+        border: 1px solid rgba(192, 132, 252, 0.55);
+        margin-bottom: 0.75rem;
+        box-shadow: 0 8px 20px rgba(76, 29, 149, 0.07);
     }
 
     .premium-card-title {
-        font-weight: 750;
-        color: var(--deep-blue) !important;
-        margin-bottom: 0.2rem;
+        font-weight: 800;
+        color: var(--purple-text) !important;
+        margin-bottom: 0.25rem;
     }
 
     .premium-card-text {
-        color: var(--muted-slate) !important;
+        color: #5B5270 !important;
         font-size: 0.86rem;
         line-height: 1.35;
     }
 
     .contact-card {
-        background: rgba(255, 248, 241, 0.92);
+        background: rgba(255, 248, 241, 0.94);
         padding: 1rem;
         border-radius: 18px;
-        border: 1px solid rgba(217, 130, 91, 0.22);
-        box-shadow: 0 10px 24px rgba(30, 58, 95, 0.06);
+        border: 1px solid rgba(217, 130, 91, 0.24);
+        box-shadow: 0 10px 24px rgba(30, 58, 95, 0.07);
     }
 
     .contact-card a {
@@ -289,6 +297,41 @@ st.markdown(
 
     .contact-card a:hover {
         text-decoration: underline;
+    }
+
+    .feedback-button {
+        display: inline-block;
+        margin-top: 0.8rem;
+        padding: 0.72rem 1rem;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #D9825B 0%, #C96A43 100%);
+        color: white !important;
+        font-weight: 850;
+        text-decoration: none !important;
+        box-shadow: 0 10px 22px rgba(201, 106, 67, 0.22);
+    }
+
+    .feedback-button,
+    .feedback-button:visited,
+    .feedback-button:link,
+    .feedback-button:hover,
+    .feedback-button:active {
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .contact-card .feedback-button,
+    .contact-card .feedback-button:visited,
+    .contact-card .feedback-button:link,
+    .contact-card .feedback-button:hover,
+    .contact-card .feedback-button:active {
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .feedback-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 28px rgba(201, 106, 67, 0.28);
     }
 
     .section-title {
@@ -305,7 +348,7 @@ st.markdown(
     }
 
     .privacy-note {
-        background: rgba(255, 248, 241, 0.86);
+        background: rgba(255, 248, 241, 0.88);
         border-left: 5px solid var(--smoky-orange);
         border-radius: 14px;
         padding: 0.9rem 1rem;
@@ -321,8 +364,18 @@ st.markdown(
         text-align: center;
     }
 
+    .mini-footer a {
+        color: var(--burnt-orange) !important;
+        font-weight: 800;
+        text-decoration: none;
+    }
+
+    .mini-footer a:hover {
+        text-decoration: underline;
+    }
+
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #DFF3FF 0%, #F3FAFF 48%, #FFF8F1 100%);
+        background: linear-gradient(180deg, #CBEFFF 0%, #E7F6FF 48%, #FFF8F1 100%);
         border-right: 1px solid rgba(30, 58, 95, 0.10);
     }
 
@@ -476,7 +529,7 @@ st.markdown(
     }
 
     [role="option"]:hover {
-        background-color: #DFF3FF !important;
+        background-color: #CBEFFF !important;
         color: var(--deep-blue) !important;
     }
 
@@ -490,7 +543,7 @@ st.markdown(
     }
 
     [data-testid="stExpander"] {
-        background: rgba(255, 255, 255, 0.76);
+        background: rgba(255, 255, 255, 0.78);
         border-radius: 16px;
         border: 1px solid rgba(217, 130, 91, 0.24);
         overflow: hidden;
@@ -964,9 +1017,6 @@ def extract_flashcards(text):
     Extracts flashcards written as:
     Q: question
     A: answer
-
-    Returns a list of dictionaries:
-    [{"front": "...", "back": "..."}]
     """
 
     flashcards = []
@@ -997,7 +1047,6 @@ def extract_flashcards(text):
 def flashcards_to_csv(flashcards):
     """
     Converts flashcards into CSV format with Front and Back columns.
-    Useful for spreadsheet import and future Anki/Quizlet-style workflows.
     """
 
     output = StringIO()
@@ -1489,9 +1538,11 @@ with feedback_col:
             f"""
             <div class="contact-card">
                 <strong>Help improve EngineerNotes AI</strong><br><br>
-                Send feedback, bug reports, or feature ideas by email:<br>
-                <a href="mailto:{CONTACT_EMAIL}?subject=EngineerNotes%20AI%20Feedback">
-                    {CONTACT_EMAIL}
+                Feedback is collected through a short form. You do not need to provide
+                your name or email unless you want a reply.
+                <br><br>
+                <a class="feedback-button" href="{FEEDBACK_FORM_URL}" target="_blank">
+                    Open feedback form
                 </a>
                 <br><br>
                 You can also view the project on GitHub:<br>
@@ -1503,9 +1554,17 @@ with feedback_col:
             unsafe_allow_html=True
         )
 
+        st.markdown(
+            """
+            <div style="margin-top: 1.1rem;">
+                <strong>Useful feedback includes:</strong>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
         st.write(
             """
-            Useful feedback includes:
             - Broken PDF, Markdown, or flashcard downloads
             - Confusing explanations
             - Missing subjects or levels
@@ -1524,6 +1583,7 @@ with privacy_col:
             - Notes are used to generate revision content.
             - Notes may be sent to an AI provider for processing.
             - The app does not intentionally store pasted notes.
+            - Feedback is collected through a form rather than direct email.
             - Users should avoid entering sensitive personal information.
 
             Do not paste:
@@ -1545,7 +1605,7 @@ st.markdown(
     f"""
     <div class="mini-footer">
         EngineerNotes AI MVP • Built with Python, Streamlit, OpenAI API, ReportLab, and a suspicious amount of debugging.<br>
-        Feedback: {CONTACT_EMAIL}
+        <a href="{FEEDBACK_FORM_URL}" target="_blank">Send anonymous feedback</a>
     </div>
     """,
     unsafe_allow_html=True
