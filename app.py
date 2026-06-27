@@ -67,7 +67,7 @@ client = OpenAI(api_key=api_key)
 # --------------------------------------------------
 
 st.set_page_config(
-    page_title="EngineerNotes AI",
+    page_title="Nexa Study",
     page_icon="⚙️",
     layout="wide"
 )
@@ -586,7 +586,7 @@ st.markdown(
 st.markdown(
     """
     <div class="hero-card">
-        <div class="hero-title">⚙️ EngineerNotes AI</div>
+        <div class="hero-title">⚙️ Nexa Study</div>
         <div class="hero-subtitle">
             Turn messy STEM notes into clear revision packs, flashcards, quizzes,
             worked examples, and downloadable study materials.
@@ -828,7 +828,7 @@ st.markdown(
 
 def build_prompt(notes, output_type, subject, difficulty, style):
     return f"""
-You are EngineerNotes AI, a study assistant for STEM students.
+You are Nexa Study, a study assistant for STEM students.
 
 Create a {output_type} from the notes below.
 
@@ -987,10 +987,10 @@ def get_document_title(text):
             title = line[2:].strip()
             break
     else:
-        title = "EngineerNotes Revision Pack"
+        title = "Nexa Study Revision Pack"
 
     if not title:
-        title = "EngineerNotes Revision Pack"
+        title = "Nexa Study Revision Pack"
 
     return title
 
@@ -1003,7 +1003,7 @@ def make_safe_filename(text):
     title = title.strip("_")
 
     if not title:
-        title = "engineernotes_revision_pack"
+        title = "Nexa Study Revision Pack"
 
     return title
 
@@ -1086,9 +1086,9 @@ def flashcards_to_pdf(flashcards, pdf_title):
         topMargin=2 * cm,
         bottomMargin=2 * cm,
         title=f"{pdf_title} Flashcards",
-        author="EngineerNotes AI",
+        author="Nexa Study",
         subject="AI-generated flashcards",
-        creator="EngineerNotes AI"
+        creator="Nexa Study"
     )
 
     title_style = ParagraphStyle(
@@ -1165,9 +1165,9 @@ def convert_markdown_to_pdf(markdown_text, pdf_title):
         topMargin=2 * cm,
         bottomMargin=2 * cm,
         title=pdf_title,
-        author="EngineerNotes AI",
+        author="Nexa Study",
         subject="AI-generated STEM revision pack",
-        creator="EngineerNotes AI"
+        creator="Nexa Study"
     )
 
     normal_style = ParagraphStyle(
@@ -1537,7 +1537,7 @@ with feedback_col:
         st.markdown(
             f"""
             <div class="contact-card">
-                <strong>Help improve EngineerNotes AI</strong><br><br>
+                <strong>Help improve Nexa Study</strong><br><br>
                 Feedback is collected through a short form. You do not need to provide
                 your name or email unless you want a reply.
                 <br><br>
@@ -1577,7 +1577,7 @@ with privacy_col:
     with st.expander("Privacy notice"):
         st.write(
             """
-            EngineerNotes AI processes notes pasted into the app to generate study materials.
+            Nexa Study processes notes pasted into the app to generate study materials.
 
             Current MVP behaviour:
             - Notes are used to generate revision content.
@@ -1604,7 +1604,7 @@ with privacy_col:
 st.markdown(
     f"""
     <div class="mini-footer">
-        EngineerNotes AI MVP • Built with Python, Streamlit, OpenAI API, ReportLab, and a suspicious amount of debugging.<br>
+        Nexa Study MVP • Built with Python, Streamlit, OpenAI API, ReportLab, and a suspicious amount of debugging.<br>
         <a href="{FEEDBACK_FORM_URL}" target="_blank">Send anonymous feedback</a>
     </div>
     """,
